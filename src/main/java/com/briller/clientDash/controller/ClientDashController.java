@@ -1,6 +1,5 @@
 package com.briller.clientDash.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.briller.clientDash.response.Response;
 import com.briller.clientDash.service.IClientDashboardService;
 
 
@@ -27,7 +27,7 @@ public class ClientDashController {
 	private IClientDashboardService iClientDashboardService;
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/getClientDashboardData")
-	public List<Map<String,String>> getClientDashboardData(@RequestBody Map<String,String> request) throws Exception {
+	public Response getClientDashboardData(@RequestBody Map<String,String> request) throws Exception {
 
 		log.info("Inside getClientDashboardData" + request);
 
